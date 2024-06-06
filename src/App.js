@@ -17,6 +17,7 @@ function App() {
         const res = await fetch(`${url}/developer/${id}`, { method: "GET" });
         const dev = await res.json();
         setData(dev.data);
+        console.log(data.projects, "lllllllllll");
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -39,7 +40,7 @@ function App() {
           element={<GeneralLayout projectData={data?.projects} />}
         />
         <Route
-          path="/case-study/:id"
+          path="/case-study/:name"
           element={<GeneralLayout projectData={data?.projects} />}
         />
       </Routes>
